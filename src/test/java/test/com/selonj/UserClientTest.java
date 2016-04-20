@@ -62,14 +62,11 @@ public class UserClientTest {
     tokenService = retrofit.create(AccessTokenService.class);
   }
 
-  @Test public void retrievesUserInfo() throws Exception {
-    while (true) {
-      User user = client.fetch().execute().body();
+  @Test public void retrievesUser() throws Exception {
+    User user = client.fetch().execute().body();
 
-      assertThat(user.username, equalTo("android"));
-      assertThat(user.avatar, equalTo("/images/avatar2.jpg"));
-      assertThat(user.mobile, equalTo("13122191011"));
-      Thread.sleep(1000);
-    }
+    assertThat(user.username, equalTo("android"));
+    assertThat(user.avatar, equalTo("/images/avatar2.jpg"));
+    assertThat(user.mobile, equalTo("13122191011"));
   }
 }
