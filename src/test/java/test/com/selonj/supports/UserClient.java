@@ -10,5 +10,5 @@ import retrofit2.http.GET;
  */
 public interface UserClient {
   @OAuth2 @GET("user.json")
-  @Enclosed(value="user") Call<User> fetch();
+  @Enclosed Call<User> fetch();
 }
